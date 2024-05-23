@@ -13,5 +13,5 @@ jobs:
    - name: Deploy to Artifactory
      run: |
        echo "Doing curl command"
-       curl -L -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" -T test1.txt "${{ secrets.JF_URL }}/artifactory/eden-test/test1.txt"
+       curl -L -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKENN }}" -T test1.txt "${{ secrets.JF_URL }}/artifactory/eden-test/test1.txt"
        echo "Done curling..."
