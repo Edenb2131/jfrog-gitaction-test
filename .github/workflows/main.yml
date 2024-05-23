@@ -1,0 +1,17 @@
+name: "JFrog test"
+on: push
+
+
+jobs:
+ build:
+   runs-on: ubuntu-latest
+  
+   steps:
+   # This action checks out the code from the repository
+   - name: Checkout Code
+     uses: actions/checkout@v4
+   - name: Deploy to Artifactory
+     run: |
+       echo "Doing curl command"
+       curl -L -H "Authorization: Bearer ${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}" -T /users/edenb/Desktop/git-task/test1.txt "${{ secrets.ARTIFACTORY_URL }}/artifactory/eden-test/test1.txt"
+       echo "Done curling..."
